@@ -7,6 +7,8 @@ namespace DATA_STRUCTURES
     {
         static void Main(string[] args)
         {
+            #region ARRAYS
+
             ArrayOperations arrayOperations = new ArrayOperations();
 
             var name = "Muthomi";
@@ -23,7 +25,7 @@ namespace DATA_STRUCTURES
 
             arrayOperations.TraverseThroughJaggedArray(arrs);
 
-
+            #endregion
         }
 
     }
