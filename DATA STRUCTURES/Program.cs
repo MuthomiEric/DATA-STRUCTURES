@@ -1,4 +1,5 @@
 ﻿using DATA_STRUCTURES.Arrays;
+using DATA_STRUCTURES.Linked_List;
 using System;
 
 namespace DATA_STRUCTURES
@@ -7,6 +8,21 @@ namespace DATA_STRUCTURES
     {
         static void Main(string[] args)
         {
+
+            #region LINKED LISTS
+            CustomLinkedList linkedList = new CustomLinkedList();
+
+            linkedList.Add(1, 2, 3, 4);
+
+            //linkedList.Remove(2);
+
+            linkedList.RemoveByIndex(2);
+
+            Console.WriteLine();
+
+
+            #endregion
+
             #region ARRAYS
 
             int[] commonArray = new int[7];
