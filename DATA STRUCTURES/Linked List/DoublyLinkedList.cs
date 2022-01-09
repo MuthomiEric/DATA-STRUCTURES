@@ -1,32 +1,68 @@
-﻿using DATA_STRUCTURES.Linked_List;
-using System;
+﻿using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace Data_STRUCTURES.Linked_List
+namespace DATA_STRUCTURES.Linked_List
 {
-    public class CustomLinkedList
+
+    public class DoublyLinkedList
     {
-        public Node head;
+        public DoublyNode head;
+
+        public void InsertInTheMiddle(DoublyLinkedList list, int index, int value)
+        {
+            var current = head;
+
+            if (list != null)
+            {
+                int counter = 0;
+
+                while (current != null)
+                {
+                    if (counter==index)
+                    {
+                        var newNode = new DoublyNode(value);
+
+                        current.Prev.Next = newNode;
+
+                        newNode.Next = current.Next;
+
+                        newNode.Prev = current.Prev;
+
+                        current.Next.Prev = newNode;
+
+                        return;
+                    }
+
+                    current = current.Next;
+
+                    counter++;
+                }
+            }
+
+        }
 
         public void Add(int value)
         {
             var current = head;
-            // edge case
-            // check if this is the first item to be added in the list  
-            // Defensive, break early/ exit early
+
             if (head == null)
             {
-                head = new Node(value);
+                head = new DoublyNode(value);
+
                 return;
             }
             while (current != null)
             {
                 if (current.Next == null)
                 {
-                    current.Next = new Node(value);
+                    var newNode = new DoublyNode(value);
+
+                    current.Next = newNode;
+
+                    newNode.Prev = current;
 
                     break;
                 }
@@ -35,22 +71,21 @@ namespace Data_STRUCTURES.Linked_List
             }
         }
 
-        public void Add(params int[] nodes)
+        public void Add(params int[] DoublyNodes)
         {
-            if (nodes == null)
+            if (DoublyNodes == null)
             {
                 throw new ArgumentNullException();
             }
-            foreach (var item in nodes)
+            foreach (var item in DoublyNodes)
             {
                 Add(item);
             }
         }
 
-        // 7-7-7-7-7
-        public Node FindByIndex(int index)
+        public DoublyNode FindByIndex(int index)
         {
-            Node current = head;
+            DoublyNode current = head;
 
             int indexCounter = 0;
 
@@ -77,7 +112,7 @@ namespace Data_STRUCTURES.Linked_List
         // Assumes No Duplicates
         public void Remove(int value)
         {
-            Node current = head;
+            DoublyNode current = head;
 
 
             if (head == null)
@@ -91,6 +126,11 @@ namespace Data_STRUCTURES.Linked_List
                 {
                     current.Next = current.Next.Next;
 
+                    if (current.Next != null)
+                    {
+                        current.Next.Prev = current;
+                    }
+
                     return;
                 }
 
@@ -100,7 +140,7 @@ namespace Data_STRUCTURES.Linked_List
 
         public void RemoveByIndex(int index)
         {
-            Node current = head;
+            DoublyNode current = head;
 
             int indexCounter = 0;
 
@@ -111,9 +151,14 @@ namespace Data_STRUCTURES.Linked_List
 
             while (current.Next != null)
             {
-                if ((indexCounter+1) == index)
+                if ((indexCounter + 1) == index)
                 {
                     current.Next = current.Next.Next;
+
+                    if (current.Next != null)
+                    {
+                        current.Next.Prev = current;
+                    }
 
                     return;
                 }
@@ -125,9 +170,9 @@ namespace Data_STRUCTURES.Linked_List
 
         }
 
-        public Node Find(int value)
+        public DoublyNode Find(int value)
         {
-            Node current = head;
+            DoublyNode current = head;
 
             if (head == null)
             {
