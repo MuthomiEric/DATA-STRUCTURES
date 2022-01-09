@@ -8,15 +8,30 @@ namespace DATA_STRUCTURES.Linked_List
 {
     public class Node
     {
-        public int data;
-
-        public Node next;
-        public Node(int d)
+        public int Data { get; set; }
+        public Node Next { get; set; }
+       
+        public Node(int data)
         {
-            data = d;
-            next = null;
+            Data = data;
+            Next = null;
         }
         
+    }
+
+    public class DoublyNode
+    {
+        public int Data { get; set; }
+        public DoublyNode Next { get; set; }
+        public DoublyNode Prev { get; set; }
+
+        public DoublyNode(int data)
+        {
+            Data = data;
+            Next = null;
+            Prev = null;
+        }
+
     }
 
 }

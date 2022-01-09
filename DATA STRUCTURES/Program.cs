@@ -1,4 +1,5 @@
-﻿using DATA_STRUCTURES.Arrays;
+﻿using Data_STRUCTURES.Linked_List;
+using DATA_STRUCTURES.Arrays;
 using DATA_STRUCTURES.Linked_List;
 using System;
 
@@ -8,15 +9,33 @@ namespace DATA_STRUCTURES
     {
         static void Main(string[] args)
         {
+            #region DOUBLY LINKED LISTS
+
+            DoublyLinkedList doublyLinkedList = new DoublyLinkedList();
+
+            doublyLinkedList.Add(1, 2, 3, 4);
+
+            doublyLinkedList.InsertInTheMiddle(doublyLinkedList,1,7);
+
+
+            //doublyLinkedList.Remove(2);
+
+            //doublyLinkedList.RemoveByIndex(2);
+
+            Console.WriteLine();
+
+
+            #endregion
 
             #region LINKED LISTS
+
             CustomLinkedList linkedList = new CustomLinkedList();
 
-            linkedList.Add(1, 2, 3, 4);
+            //linkedList.Add(1, 2, 3, 4);
 
             //linkedList.Remove(2);
 
-            linkedList.RemoveByIndex(2);
+            //linkedList.RemoveByIndex(2);
 
             Console.WriteLine();
 
