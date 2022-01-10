@@ -1,6 +1,7 @@
 ﻿using Data_STRUCTURES.Linked_List;
 using DATA_STRUCTURES.Arrays;
 using DATA_STRUCTURES.Linked_List;
+using DATA_STRUCTURES.Stacks;
 using System;
 
 namespace DATA_STRUCTURES
@@ -9,6 +10,36 @@ namespace DATA_STRUCTURES
     {
         static void Main(string[] args)
         {
+            #region STACKS
+
+            CustomStackUsingArray<int> customStackUsingArray = new CustomStackUsingArray<int>(20);
+
+            var isEmpty = customStackUsingArray.IsEmpty();
+
+            customStackUsingArray.Push(1);
+            customStackUsingArray.Push(2);
+            customStackUsingArray.Push(3);
+            customStackUsingArray.Push(4);
+            customStackUsingArray.Push(5);
+            customStackUsingArray.Push(6);
+            customStackUsingArray.Push(7);
+            customStackUsingArray.Push(8);
+            customStackUsingArray.Push(9);
+            customStackUsingArray.Push(10);
+
+            var isEmptyAfter = customStackUsingArray.IsEmpty();
+
+            var top = customStackUsingArray.Peek();
+
+            var poped = customStackUsingArray.Pop();
+
+            var topAfterPop = customStackUsingArray.Peek();
+            
+            Console.WriteLine();
+
+
+            #endregion
+
             #region DOUBLY LINKED LISTS
 
             DoublyLinkedList doublyLinkedList = new DoublyLinkedList();
