@@ -11,13 +11,13 @@ namespace Test.Ninja
 {
     class TestLinkedListOperations
     {
-        CustomLinkedList linkedList;
+        CustomLinkedList<int> linkedList;
 
 
         [SetUp]
         public void Setup()
         {
-           linkedList = new CustomLinkedList();
+           linkedList = new CustomLinkedList<int>();
 
         }
 
@@ -26,7 +26,7 @@ namespace Test.Ninja
         {
             linkedList.Add(1, 2, 3, 4);
 
-            Assert.AreEqual(linkedList.Find(2).Data, new Node(2).Data);
+            Assert.AreEqual(linkedList.Find(2).Data, new Node<int>(2).Data);
         }
 
         [Test]
@@ -50,7 +50,7 @@ namespace Test.Ninja
            
             linkedList.Add(1, 2, 3, 4);
 
-            Assert.AreEqual(linkedList.FindByIndex(1).Data,new Node(2).Data);
+            Assert.AreEqual(linkedList.FindByIndex(1).Data,new Node<int>(2).Data);
         }
 
     }

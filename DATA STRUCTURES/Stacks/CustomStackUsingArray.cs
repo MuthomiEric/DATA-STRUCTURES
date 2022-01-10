@@ -20,7 +20,7 @@ namespace DATA_STRUCTURES.Stacks
             data = new T[size];
         }
 
-        public int Top { get; set; } = -1;
+        private int Top { get; set; } = -1;
 
         public bool IsEmpty()
         {

@@ -6,12 +6,12 @@ using System.Threading.Tasks;
 
 namespace DATA_STRUCTURES.Linked_List
 {
-    public class Node
+    public class Node<T>
     {
-        public int Data { get; set; }
-        public Node Next { get; set; }
+        public T Data { get; set; }
+        public Node<T> Next { get; set; }
        
-        public Node(int data)
+        public Node(T data)
         {
             Data = data;
             Next = null;

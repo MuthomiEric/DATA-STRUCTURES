@@ -10,7 +10,37 @@ namespace DATA_STRUCTURES
     {
         static void Main(string[] args)
         {
-            #region STACKS
+            #region STACKS USING LINKED LIST
+
+            CustomStackLinkedList<int> customStackLinkedList = new CustomStackLinkedList<int>();
+
+            var isEmpty1 = customStackLinkedList.IsEmpty();
+
+            customStackLinkedList.Push(1);
+            customStackLinkedList.Push(2);
+            customStackLinkedList.Push(3);
+            customStackLinkedList.Push(4);
+            customStackLinkedList.Push(5);
+            customStackLinkedList.Push(6);
+            customStackLinkedList.Push(7);
+            customStackLinkedList.Push(8);
+            customStackLinkedList.Push(9);
+            customStackLinkedList.Push(10);
+
+            var isEmptyAfter1 = customStackLinkedList.IsEmpty();
+
+            var top1 = customStackLinkedList.Peek();
+
+            var poped1 = customStackLinkedList.Pop();
+
+            var topAfterPop1 = customStackLinkedList.Peek();
+
+            Console.WriteLine();
+
+
+            #endregion
+
+            #region STACKS USING ARRAYS
 
             CustomStackUsingArray<int> customStackUsingArray = new CustomStackUsingArray<int>(20);
 
@@ -60,7 +90,7 @@ namespace DATA_STRUCTURES
 
             #region LINKED LISTS
 
-            CustomLinkedList linkedList = new CustomLinkedList();
+            CustomLinkedList<int> linkedList = new CustomLinkedList<int>();
 
             //linkedList.Add(1, 2, 3, 4);
 

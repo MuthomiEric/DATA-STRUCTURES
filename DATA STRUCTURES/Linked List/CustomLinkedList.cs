@@ -7,11 +7,11 @@ using System.Threading.Tasks;
 
 namespace Data_STRUCTURES.Linked_List
 {
-    public class CustomLinkedList
+    public class CustomLinkedList<T>
     {
-        public Node head;
+        public Node<T> head;
 
-        public void Add(int value)
+        public void Add(T value)
         {
             var current = head;
             // edge case
@@ -19,14 +19,15 @@ namespace Data_STRUCTURES.Linked_List
             // Defensive, break early/ exit early
             if (head == null)
             {
-                head = new Node(value);
+                head = new Node<T>(value);
+
                 return;
             }
             while (current != null)
             {
                 if (current.Next == null)
                 {
-                    current.Next = new Node(value);
+                    current.Next = new Node<T>(value);
 
                     break;
                 }
@@ -35,7 +36,7 @@ namespace Data_STRUCTURES.Linked_List
             }
         }
 
-        public void Add(params int[] nodes)
+        public void Add(params T[] nodes)
         {
             if (nodes == null)
             {
@@ -48,9 +49,9 @@ namespace Data_STRUCTURES.Linked_List
         }
 
         // 7-7-7-7-7
-        public Node FindByIndex(int index)
+        public Node<T> FindByIndex(int index)
         {
-            Node current = head;
+            Node<T> current = head;
 
             int indexCounter = 0;
 
@@ -77,7 +78,7 @@ namespace Data_STRUCTURES.Linked_List
         // Assumes No Duplicates
         public void Remove(int value)
         {
-            Node current = head;
+            Node<T> current = head;
 
 
             if (head == null)
@@ -87,7 +88,7 @@ namespace Data_STRUCTURES.Linked_List
 
             while (current.Next != null)
             {
-                if (current.Next.Data == value)
+                if (current.Next.Data.Equals(value))
                 {
                     current.Next = current.Next.Next;
 
@@ -100,7 +101,7 @@ namespace Data_STRUCTURES.Linked_List
 
         public void RemoveByIndex(int index)
         {
-            Node current = head;
+            Node<T> current = head;
 
             int indexCounter = 0;
 
@@ -125,9 +126,9 @@ namespace Data_STRUCTURES.Linked_List
 
         }
 
-        public Node Find(int value)
+        public Node<T> Find(T value)
         {
-            Node current = head;
+            Node<T> current = head;
 
             if (head == null)
             {
@@ -136,7 +137,7 @@ namespace Data_STRUCTURES.Linked_List
 
             while (current.Next != null)
             {
-                if (current.Data == value)
+                if (current.Data.Equals(value))
                 {
                     return current;
                 }
