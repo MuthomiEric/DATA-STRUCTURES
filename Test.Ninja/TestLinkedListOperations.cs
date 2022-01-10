@@ -1,4 +1,5 @@
-﻿using DATA_STRUCTURES.Linked_List;
+﻿using Data_STRUCTURES.Linked_List;
+using DATA_STRUCTURES.Linked_List;
 using NUnit.Framework;
 using System;
 using System.Collections.Generic;
@@ -25,7 +26,7 @@ namespace Test.Ninja
         {
             linkedList.Add(1, 2, 3, 4);
 
-            Assert.AreEqual(linkedList.Find(2).data, new Node(2).data);
+            Assert.AreEqual(linkedList.Find(2).Data, new Node(2).Data);
         }
 
         [Test]
@@ -49,7 +50,7 @@ namespace Test.Ninja
            
             linkedList.Add(1, 2, 3, 4);
 
-            Assert.AreEqual(linkedList.FindByIndex(1).data,new Node(2).data);
+            Assert.AreEqual(linkedList.FindByIndex(1).Data,new Node(2).Data);
         }
 
     }
