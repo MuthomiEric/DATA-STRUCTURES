@@ -86,13 +86,21 @@ namespace DATA_STRUCTURES.Linked_List
 
             while (current.next != null)
             {
-                if (current.next.data == value)
+                if (current.data.Equals(value))
+                {
+                    head = current.next;
+
+                    return;
+                }
+
+                if (current.next.data.Equals(value))
                 {
                     current.next = current.next.next;
 
                     return;
                 }
 
+                current = current.next;
             }
 
         }
@@ -110,6 +118,13 @@ namespace DATA_STRUCTURES.Linked_List
 
             while (current.next != null)
             {
+                if (index==indexCounter)
+                {
+                    head = current.next;
+
+                    return;
+                }
+
                 if ((indexCounter+1) == index)
                 {
                     current.next = current.next.next;
