@@ -25,6 +25,10 @@ namespace DATA_STRUCTURES
             q1.EnQueue(7);
             q1.EnQueue(0);
 
+            q1.DeQueue();
+            q1.DeQueue();
+            q1.DeQueue();
+
             Console.WriteLine();
             #endregion
 

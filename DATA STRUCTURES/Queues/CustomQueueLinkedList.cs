@@ -28,7 +28,7 @@ namespace DATA_STRUCTURES.Queues
             rear = newNode;
         }
 
-        public void dequeue()
+        public void DeQueue()
         {
             if (front == null) // nothing in here 
                 return;
