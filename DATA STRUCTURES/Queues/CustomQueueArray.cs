@@ -57,7 +57,6 @@ namespace DATA_STRUCTURES.Queues
             {
                 Console.WriteLine("Queue is Empty");
 
-
                 return -1;
             }
 

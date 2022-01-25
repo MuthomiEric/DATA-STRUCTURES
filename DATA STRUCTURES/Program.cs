@@ -11,7 +11,24 @@ namespace DATA_STRUCTURES
     {
         static void Main(string[] args)
         {
-            #region QUEUES
+
+            #region QUEUES  LINKEDLIST IMPLEMENTATION
+            CustomQueueLinkedList q1 = new CustomQueueLinkedList();
+
+            q1.EnQueue(14);
+            q1.EnQueue(22);
+            q1.EnQueue(13);
+            q1.EnQueue(-6);
+            q1.EnQueue(2);
+             
+            q1.EnQueue(9);
+            q1.EnQueue(7);
+            q1.EnQueue(0);
+
+            Console.WriteLine();
+            #endregion
+
+            #region QUEUES  ARRAY IMPLEMENTATION
             CustomQueueArray q = new CustomQueueArray(5);
 
             q.EnQueue(14);
