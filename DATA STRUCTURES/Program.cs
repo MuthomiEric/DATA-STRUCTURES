@@ -1,6 +1,7 @@
 ﻿using Data_STRUCTURES.Linked_List;
 using DATA_STRUCTURES.Arrays;
 using DATA_STRUCTURES.Linked_List;
+using DATA_STRUCTURES.Queues;
 using DATA_STRUCTURES.Stacks;
 using System;
 
@@ -10,6 +11,25 @@ namespace DATA_STRUCTURES
     {
         static void Main(string[] args)
         {
+            #region QUEUES
+            CustomQueueArray q = new CustomQueueArray(5);
+
+            q.EnQueue(14);
+            q.EnQueue(22);
+            q.EnQueue(13);
+            q.EnQueue(-6);
+            q.EnQueue(2);
+          
+            q.DeQueue();
+            q.DeQueue();
+
+            q.EnQueue(9);
+            q.EnQueue(7);
+            q.EnQueue(0);
+
+            Console.WriteLine();
+            #endregion
+
             #region STACKS USING LINKED LIST
 
             CustomStackLinkedList<int> customStackLinkedList = new CustomStackLinkedList<int>();
